@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog | IT & AI Insights Malaysia | Marz Technology</title>
+    <meta name="description" content="Read the latest insights on IT infrastructure, AI agents, cybersecurity, and digital transformation for Malaysian businesses. Expert articles by Marz Technology & Trading.">
+    <meta name="keywords" content="IT blog Malaysia, AI insights, cybersecurity tips, digital transformation, IT infrastructure guide, Malaysia tech blog">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://marz.my/blog.html">
+    <meta property="og:title" content="IT & AI Insights | Marz Technology Malaysia Blog">
+    <meta property="og:description" content="Expert insights on IT infrastructure, AI agents, cybersecurity, and digital transformation for Malaysian businesses.">
+    <meta property="og:url" content="https://marz.my/blog.html">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://marz.my/og-image.png">
+    <!-- BreadcrumbList Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://marz.my/"},
+        {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://marz.my/blog.html"}
+      ]
+    }
+    </script>
+    <!-- Blog Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Blog",
+      "name": "Marz Technology Insights",
+      "url": "https://marz.my/blog.html",
+      "description": "Expert insights on IT infrastructure, AI, cybersecurity, and digital transformation for Malaysian businesses.",
+      "publisher": {"@id": "https://marz.my/#organization"},
+      "blogPost": [
+        {
+          "@type": "BlogPosting",
+          "headline": "How AI Agents Are Transforming Malaysian Businesses in 2026",
+          "url": "https://marz.my/blog/ai-agents-malaysia-business-2026.html",
+          "datePublished": "2026-06-01",
+          "dateModified": "2026-06-01",
+          "author": {"@type": "Organization", "name": "Marz Technology & Trading"},
+          "image": "https://marz.my/og-image.png",
+          "description": "Discover how AI agents and chatbots are revolutionising customer service, sales, and operations for Malaysian SMEs and enterprises."
+        },
+        {
+          "@type": "BlogPosting",
+          "headline": "Essential IT Infrastructure Guide for Malaysian SMEs 2026",
+          "url": "https://marz.my/blog/it-infrastructure-malaysia-sme-2026.html",
+          "datePublished": "2026-05-20",
+          "dateModified": "2026-05-20",
+          "author": {"@type": "Organization", "name": "Marz Technology & Trading"},
+          "image": "https://marz.my/og-image.png",
+          "description": "A comprehensive guide to building reliable, scalable, and secure IT infrastructure for Malaysian small and medium enterprises."
+        },
+        {
+          "@type": "BlogPosting",
+          "headline": "Cybersecurity Essentials for Malaysian Companies in 2026",
+          "url": "https://marz.my/blog/cybersecurity-essentials-malaysia-2026.html",
+          "datePublished": "2026-05-10",
+          "dateModified": "2026-05-10",
+          "author": {"@type": "Organization", "name": "Marz Technology & Trading"},
+          "image": "https://marz.my/og-image.png",
+          "description": "Key cybersecurity measures every Malaysian company must implement to protect against ransomware, data breaches, and cyber threats."
+        }
+      ]
+    }
+    </script>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; color: #1E293B; background: #F8FAFC; line-height: 1.7; }
+        :root { --navy: #0F172A; --blue: #2563EB; --gold: #F59E0B; --light: #F8FAFC; --border: #E2E8F0; --text: #1E293B; --muted: #64748B; }
+        header { background: var(--navy); padding: 16px 24px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; }
+        header .logo { font-size: 20px; font-weight: 800; color: white; text-decoration: none; }
+        header .logo span { color: var(--gold); }
+        header nav a { color: rgba(255,255,255,0.8); text-decoration: none; margin-left: 20px; font-size: 14px; }
+        header nav a:hover { color: var(--gold); }
+        .hero { background: linear-gradient(135deg, var(--navy) 0%, #1E3A5F 100%); color: white; padding: 80px 24px 60px; text-align: center; }
+        .hero h1 { font-size: 36px; font-weight: 800; margin-bottom: 12px; }
+        .hero p { color: rgba(255,255,255,0.7); font-size: 18px; max-width: 640px; margin: 0 auto; }
+        .container { max-width: 960px; margin: 0 auto; padding: 48px 24px; }
+        .posts-grid { display: grid; gap: 32px; }
+        .post-card { background: white; border-radius: 16px; border: 1px solid var(--border); overflow: hidden; transition: all 0.2s; }
+        .post-card:hover { transform: translateY(-4px); box-shadow: 0 8px 30px rgba(0,0,0,0.08); border-color: var(--blue); }
+        .post-card-body { padding: 28px; }
+        .post-card .category { display: inline-block; background: #EFF6FF; color: var(--blue); font-size: 12px; font-weight: 600; padding: 4px 12px; border-radius: 20px; margin-bottom: 12px; }
+        .post-card h2 { font-size: 22px; font-weight: 700; margin-bottom: 8px; line-height: 1.3; }
+        .post-card h2 a { color: var(--navy); text-decoration: none; }
+        .post-card h2 a:hover { color: var(--blue); }
+        .post-card p { color: var(--muted); margin-bottom: 16px; font-size: 15px; }
+        .post-card .meta { font-size: 13px; color: var(--muted); }
+        .post-card .read-more { color: var(--blue); font-weight: 600; font-size: 14px; text-decoration: none; }
+        .post-card .read-more:hover { text-decoration: underline; }
+        .cta-section { background: var(--navy); color: white; text-align: center; padding: 60px 24px; margin-top: 48px; }
+        .cta-section h2 { font-size: 28px; margin-bottom: 12px; }
+        .cta-section p { color: rgba(255,255,255,0.7); margin-bottom: 24px; }
+        .btn { display: inline-block; padding: 12px 28px; border-radius: 10px; font-weight: 600; font-size: 15px; text-decoration: none; }
+        .btn-primary { background: var(--gold); color: var(--navy); }
+        .btn-primary:hover { opacity: 0.9; }
+        footer { background: var(--navy); color: rgba(255,255,255,0.6); text-align: center; padding: 32px 24px; font-size: 14px; }
+        footer a { color: var(--gold); text-decoration: none; }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="/" class="logo">Marz<span>Tech</span></a>
+        <nav>
+            <a href="/">Home</a>
+            <a href="/services.html">Services</a>
+            <a href="/ai-solutions.html">AI</a>
+            <a href="/products.html">Products</a>
+            <a href="/blog.html">Blog</a>
+            <a href="/contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>IT & AI Insights</h1>
+        <p>Expert articles on technology, AI agents, cybersecurity, and digital transformation for Malaysian businesses.</p>
+    </section>
+
+    <div class="container">
+        <div class="posts-grid">
+            <article class="post-card">
+                <div class="post-card-body">
+                    <span class="category">AI & Automation</span>
+                    <h2><a href="/blog/ai-agents-malaysia-business-2026.html">How AI Agents Are Transforming Malaysian Businesses in 2026</a></h2>
+                    <p>Discover how AI-powered chatbots, virtual assistants, and intelligent automation are revolutionising customer service, sales, and operations for Malaysian SMEs and enterprises. Learn how StaffBot.my is leading this transformation.</p>
+                    <div class="meta">June 1, 2026 &middot; 5 min read</div>
+                    <a href="/blog/ai-agents-malaysia-business-2026.html" class="read-more">Read More →</a>
+                </div>
+            </article>
+
+            <article class="post-card">
+                <div class="post-card-body">
+                    <span class="category">IT Infrastructure</span>
+                    <h2><a href="/blog/it-infrastructure-malaysia-sme-2026.html">Essential IT Infrastructure Guide for Malaysian SMEs (2026)</a></h2>
+                    <p>A comprehensive guide to building reliable, scalable, and secure IT infrastructure for Malaysian small and medium enterprises. Covering networking, cloud, hardware, and best practices.</p>
+                    <div class="meta">May 20, 2026 &middot; 6 min read</div>
+                    <a href="/blog/it-infrastructure-malaysia-sme-2026.html" class="read-more">Read More →</a>
+                </div>
+            </article>
+
+            <article class="post-card">
+                <div class="post-card-body">
+                    <span class="category">Cybersecurity</span>
+                    <h2><a href="/blog/cybersecurity-essentials-malaysia-2026.html">Cybersecurity Essentials for Malaysian Companies in 2026</a></h2>
+                    <p>Key cybersecurity measures every Malaysian company must implement to protect against ransomware, data breaches, and evolving cyber threats. Includes practical steps and compliance guidance.</p>
+                    <div class="meta">May 10, 2026 &middot; 5 min read</div>
+                    <a href="/blog/cybersecurity-essentials-malaysia-2026.html" class="read-more">Read More →</a>
+                </div>
+            </article>
+        </div>
+    </div>
+
+    <section class="cta-section">
+        <h2>Need Expert IT Solutions?</h2>
+        <p>Let's discuss how we can help transform your business with AI, IT infrastructure, and cybersecurity solutions.</p>
+        <a href="/contact.html" class="btn btn-primary">Get a Free Consultation</a>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Marz Technology & Trading (SSM: 001884868V). All rights reserved.</p>
+        <p><a href="/">Home</a> &middot; <a href="/services.html">Services</a> &middot; <a href="/blog.html">Blog</a> &middot; <a href="/contact.html">Contact</a></p>
+    </footer>
+</body>
+</html>
