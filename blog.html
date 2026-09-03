@@ -154,7 +154,7 @@ searchInput.addEventListener('input',()=>{filterByCategory(filterBar.querySelect
 
 async function loadPosts() {
   try {
-    const res = await fetch('/api/posts?status=published&limit=50');
+    const res = await fetch('/posts.json');
     if (!res.ok) throw new Error('API error');
     allPosts = await res.json();
     allPosts.forEach(p=>{if(p.category)categories.add(p.category);});

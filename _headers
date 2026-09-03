@@ -1,0 +1,8 @@
+/posts.json
+  Content-Type: application/json
+  Access-Control-Allow-Origin: *
+  Cache-Control: public, max-age=300
+
+/api/*
+  Content-Type: application/json
+  Access-Control-Allow-Origin: *
