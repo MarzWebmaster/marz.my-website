@@ -69,7 +69,7 @@ async function loadPost() {
   if (!slug) { document.getElementById('postContent').innerHTML='<h2>Article not found</h2><p>No slug specified.</p>'; return; }
   
   try {
-    const res = await fetch('../posts.json');
+    const res = await fetch('/api/posts?status=published&limit=50');
     const posts = await res.json();
     const post = posts.find(p => p.slug === slug);
     
