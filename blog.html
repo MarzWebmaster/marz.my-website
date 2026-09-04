@@ -152,16 +152,153 @@ function filterByCategory(cat) {
 filterBar.addEventListener('click',e=>{if(e.target.classList.contains('filter-btn'))filterByCategory(e.target.dataset.category);});
 searchInput.addEventListener('input',()=>{filterByCategory(filterBar.querySelector('.filter-btn.active')?.dataset.category||'all');});
 
+const EMBEDDED_POSTS = [
+  {
+    "slug": "ai-agents-malaysia-business-2026",
+    "title": "How AI Agents Are Transforming Malaysian Businesses in 2026",
+    "category": "AI Solutions",
+    "author": "Marz Technology",
+    "published_at": "2026-06-01T00:00:00Z",
+    "excerpt": "Discover how AI-powered chatbots, virtual assistants, and intelligent automation are revolutionising customer service, sales, and operations for Malaysian SMEs and enterprises.",
+    "tags": [
+      "AI",
+      "automation",
+      "Malaysia",
+      "business"
+    ],
+    "url": "blog/ai-agents-malaysia-business-2026.html"
+  },
+  {
+    "slug": "cybersecurity-essentials-malaysia-2026",
+    "title": "Cybersecurity Essentials for Malaysian Companies in 2026",
+    "category": "Cybersecurity",
+    "author": "Marz Technology",
+    "published_at": "2026-05-10T00:00:00Z",
+    "excerpt": "Key cybersecurity measures every Malaysian company must implement to protect against ransomware, data breaches, and evolving cyber threats.",
+    "tags": [
+      "cybersecurity",
+      "ransomware",
+      "data breach",
+      "Malaysia"
+    ],
+    "url": "blog/cybersecurity-essentials-malaysia-2026.html"
+  },
+  {
+    "slug": "it-infrastructure-malaysia-sme-2026",
+    "title": "Essential IT Infrastructure Guide for Malaysian SMEs (2026)",
+    "category": "IT Infrastructure",
+    "author": "Marz Technology",
+    "published_at": "2026-05-20T00:00:00Z",
+    "excerpt": "A comprehensive guide to building reliable, scalable, and secure IT infrastructure for Malaysian small and medium enterprises.",
+    "tags": [
+      "IT infrastructure",
+      "SME",
+      "networking",
+      "cloud"
+    ],
+    "url": "blog/it-infrastructure-malaysia-sme-2026.html"
+  },
+  {
+    "slug": "tech-news-malaysia-04-september-2026",
+    "title": "Malaysian Tech News \u2014 4 September 2026",
+    "category": "News - Malaysia",
+    "author": "Marz Technology",
+    "published_at": "2026-09-04T08:00:00+08:00",
+    "excerpt": "Today's top Malaysian tech headlines with our POV analysis for entrepreneurs and consumers.",
+    "tags": [
+      "Malaysia",
+      "tech news",
+      "AI",
+      "cybersecurity"
+    ],
+    "url": "blog/tech-news-malaysia-04-september-2026.html"
+  },
+  {
+    "slug": "tech-news-asian-04-september-2026",
+    "title": "Asian Tech News \u2014 4 September 2026",
+    "category": "News - Asia",
+    "author": "Marz Technology",
+    "published_at": "2026-09-04T08:05:00+08:00",
+    "excerpt": "Key tech developments across Asia with our analysis for Southeast Asian businesses.",
+    "tags": [
+      "Asia",
+      "tech news",
+      "AI",
+      "data center",
+      "5G"
+    ],
+    "url": "blog/tech-news-asian-04-september-2026.html"
+  },
+  {
+    "slug": "tech-news-worldwide-04-september-2026",
+    "title": "Global Tech News \u2014 4 September 2026",
+    "category": "News - Worldwide",
+    "author": "Marz Technology",
+    "published_at": "2026-09-04T08:10:00+08:00",
+    "excerpt": "Major global tech developments and what they mean for businesses in Malaysia.",
+    "tags": [
+      "global",
+      "tech news",
+      "NVIDIA",
+      "cloud",
+      "AI regulation"
+    ],
+    "url": "blog/tech-news-worldwide-04-september-2026.html"
+  },
+  {
+    "slug": "enterprise-it-infrastructure-support",
+    "title": "Enterprise IT Infrastructure & Support: Why Your 10-Year-Old Servers Are Costing You More Than You Think",
+    "category": "IT Infrastructure",
+    "author": "Marz Technology",
+    "published_at": "2026-09-04T12:00:00+08:00",
+    "excerpt": "Is your enterprise running on legacy infrastructure? Learn the real cost of outdated servers and how modern IT infrastructure can transform your operations.",
+    "tags": [
+      "enterprise",
+      "IT infrastructure",
+      "server",
+      "legacy systems",
+      "digital transformation"
+    ],
+    "url": "blog/enterprise-it-infrastructure-support.html"
+  },
+  {
+    "slug": "does-your-sme-need-it-infrastructure-support",
+    "title": "Does Your SME Need IT Infrastructure & Support? 5 Signs You're Overdue",
+    "category": "IT Infrastructure",
+    "author": "Marz Technology",
+    "published_at": "2026-09-04T12:05:00+08:00",
+    "excerpt": "Small and medium businesses often overlook IT infrastructure until something breaks. Here are 5 warning signs that your SME needs professional IT support.",
+    "tags": [
+      "SME",
+      "IT support",
+      "IT infrastructure",
+      "small business",
+      "managed services"
+    ],
+    "url": "blog/does-your-sme-need-it-infrastructure-support.html"
+  }
+];
+
 async function loadPosts() {
   try {
+    // Try loading from posts.json first
     const res = await fetch('/posts.json');
-    if (!res.ok) throw new Error('API error');
-    allPosts = await res.json();
-    allPosts.forEach(p=>{if(p.category)categories.add(p.category);});
-    loadingState.style.display='none'; buildFilters(); renderPosts(allPosts);
+    if (res.ok) {
+      const text = await res.text();
+      if (text.trim().startsWith('[')) {
+        allPosts = JSON.parse(text);
+      } else {
+        allPosts = EMBEDDED_POSTS;
+      }
+    } else {
+      allPosts = EMBEDDED_POSTS;
+    }
   } catch(err) {
-    loadingState.innerHTML='<i class="fas fa-exclamation-triangle" style="color:var(--gold);"></i><p>Unable to load articles. Please try again later.</p>';
+    // Fallback to embedded posts
+    allPosts = EMBEDDED_POSTS;
   }
+  allPosts.forEach(p=>{if(p.category)categories.add(p.category);});
+  loadingState.style.display='none'; buildFilters(); renderPosts(allPosts);
 }
 loadPosts();
 </script>
